@@ -9,6 +9,11 @@ import TodoList from './TodoList';
 class App extends Component{
 
   state = {tasks:  ["hacer la tarea", "correr", "dormir", "correr"] }
+
+  createTodo(todoContent) {
+this.setState({tasks: todoContent});
+
+  }
 // function App() {
   // const datos = [1,2,3,4,5,6];
   // const ManyTodoList = datos.map(() => ...)
@@ -22,7 +27,7 @@ class App extends Component{
         <TodoList tasks ={this.state.tasks }  />
         {/* {ManyTodoList} */}
     
-        <Form />
+        <Form createTodo={this.createTodo} /> 
       </div>
     </div>
   );
