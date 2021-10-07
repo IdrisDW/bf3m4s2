@@ -17,7 +17,14 @@ class Form extends Component{
         className='input'
         placeholder='Agrega una tarea'
       />
-      <button className='button' onClick={() => {}}>Enviar</button>
+      <button className='button'
+       onClick={(e) => {
+        e.preventDefault();
+        this.props.onSubmit(this.state.textFieldContent);
+
+      }}>
+        
+        Enviar</button>
     </form>
   );
 }

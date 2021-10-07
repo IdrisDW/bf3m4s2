@@ -17,13 +17,14 @@ import '../css/Todo.css';
 
 class Todo extends React.Component {
   state = {
-    done: true,
-  }
+    done: true
+  };
 
   render () {
     return (
       <div className={`list-item ${this.state.done ? 'done' : ''}`}>
         {this.props.task}
+        {this.state.done}
         <button 
         onClick ={() => {
           this.setState ({done: !this.state.done});

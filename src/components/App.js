@@ -8,10 +8,11 @@ import TodoList from './TodoList';
 
 class App extends Component{
 
-  state = {tasks:  ["hacer la tarea", "correr", "dormir", "correr"] }
+  state = {tasks:  ["hacer la tarea", "correr", "dormir", "correr"] };
 
   createTodo(todoContent) {
-this.setState({tasks: todoContent});
+    this.setState({tasks: [...this.state.tasks, todoContent]})
+    
 
   }
 // function App() {
@@ -27,7 +28,7 @@ this.setState({tasks: todoContent});
         <TodoList tasks ={this.state.tasks }  />
         {/* {ManyTodoList} */}
     
-        <Form createTodo={this.createTodo} /> 
+        <Form onSubmit={(value) => this.createTodo(value)} /> 
       </div>
     </div>
   );
