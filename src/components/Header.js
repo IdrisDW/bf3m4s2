@@ -1,11 +1,11 @@
 import React from 'react';
 import '../css/header.css';
 
-function Header() {
+function Header(props) {
   return (
     <div className="card-header">
       <h1 className="card-header-title header">
-        Hay 0 tareas
+      {props.children}
       </h1>
     </div>
   )
